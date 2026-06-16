@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Name Wheel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Random Name Wheel</p>
+      <h1>Vòng quay chọn tên ngẫu nhiên</h1>
+    </div>
+    <p class="header-note">Nhập mỗi tên trên một dòng, sau đó bấm quay.</p>
+  </header>
+
+  <main class="app-layout">
+    <section class="wheel-panel" aria-label="Vòng quay tên">
+      <div class="wheel-wrap">
+        <canvas id="wheelCanvas" width="640" height="640" aria-label="Vòng quay"></canvas>
+        <div class="pointer" aria-hidden="true"></div>
+        <button id="spinButton" class="spin-button" type="button">Quay</button>
+      </div>
+
+      <div class="result-box" aria-live="polite">
+        <span class="result-label">Kết quả</span>
+        <strong id="resultText">Chưa quay</strong>
+      </div>
+    </section>
+
+    <aside class="input-panel" aria-label="Danh sách tên">
+      <label for="namesInput">Danh sách tên</label>
+      <textarea id="namesInput" spellcheck="false">Ali
+Beatriz
+Charles
+Diya
+Eric
+Fatima
+Gabriel
+Hanna</textarea>
+
+      <div class="meta-row">
+        <span id="nameCount">0 tên</span>
+        <button id="clearButton" class="ghost-button" type="button">Xóa</button>
+      </div>
+    </aside>
+  </main>
+
+  <div id="winnerModal" class="winner-modal" aria-hidden="true">
+    <div class="winner-card" role="dialog" aria-modal="true" aria-labelledby="winnerTitle">
+      <p class="winner-eyebrow">Kết quả</p>
+      <h2 id="winnerTitle">Tên thắng</h2>
+      <p class="winner-name" id="winnerName">---</p>
+      <div class="winner-actions">
+        <button id="removeWinnerButton" class="danger-button" type="button">Xóa tên này khỏi vòng quay</button>
+        <button id="skipWinnerButton" class="ghost-button" type="button">Bỏ qua</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
